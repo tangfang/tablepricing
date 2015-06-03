@@ -1,0 +1,40 @@
+<div class="row margin-bottom-40">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" ng-repeat="data in store">
+    <div class="pricing hover-effect">
+      <div class="pricing-head">
+        <h3 ng-bind="data[columns.titleIndex]"></h3>
+      </div>
+      <ul class="pricing-content list-unstyled form-horizontal">
+        <li class="form-body" style="padding-top:3px;padding-bottom:3px;" ng-repeat="column in columns.columns">
+          <div class="form-group" style="margin-bottom:0px">
+            <label class="control-label col-md-4" style="padding-top:3px;padding-bottom:3px;">
+              <i ng-class="column.iconCls"></i><span ng-bind="column.text"></span>：
+            </label>
+            <div ng-switch="column.filter.type" class="col-md-8">
+              <p ng-switch-when="date" ng-bind="data[column.dataIndex] | date: column.filter.format" class="form-control-static"></p>
+              <p ng-switch-default ng-bind="data[column.dataIndex]" class="form-control-static"></p>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="pricing-footer" ng-if="operation">
+        <button ng-class="operation.cls" ng-click="operation.handlers.click(data)" ng-bind="operation.text">机构树<i ng-class="operation.iconCls"></i></button>  
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row" ng-if="pagination">
+  <div class="col-md-5 col-sm-12">
+    <div class="dataTables_info">共{{pagination.total}}条记录,当前第{{pagination.currentPage}}页,共{{pagination.pageCount}}页</div>
+  </div>
+  <div class="col-md-7 col-sm-12"><div class="dataTables_paginate paging_bootstrap_full_number">
+    <ul class="pagination">
+      <li class="prev"><a class="btn" ng-disabled="pagination.currentPage <= 1" ng-click="pagination.goToFirst()"><span class="hidden-480">首页</span></a></li>
+      <li class="prev"><a class="btn" ng-disabled="pagination.currentPage <= 1" ng-click="pagination.goToPrevious()"><span class="hidden-480">前页</span></a></li>
+      <li class="next"><a class="btn" ng-disabled="pagination.currentPage >= pagination.pageCount" ng-click="pagination.goToNext()"><span class="hidden-480">后页</span></a></li>
+      <li class="next"><a class="btn" ng-disabled="pagination.currentPage == pagination.pageCount" ng-click="pagination.goToLast()"><span class="hidden-480">末页</span></a></li>
+    </ul>
+  </div>
+  </div>
+</div>

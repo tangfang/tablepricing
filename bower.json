@@ -1,0 +1,34 @@
+{
+  "name": "tablepricing",
+  "version": "1.0.0",
+  "homepage": "https://github.com/tangfang/tablepricing",
+  "authors": [
+      "tangfang <2002323stf@sina.com.cn>"
+  ],
+  "description": "An extended AngularJS Directive pricing-table with form, pagination, and other added features. (supports twitter bootstrap v3).",
+  "main": [
+      "build/tablepricing.min.js",
+      "build/pricing-table.css"
+  ],
+  "dependencies": {
+    "angular": "^1.3.0",
+    "bootstrap": "^3.2.0",
+    "angular-animate": "^1.3.0",
+    "angular-resource": "^1.3.0",
+    "angular-route": "^1.3.0",
+    "tablePricing": "1.0.0"
+  },
+  "keywords": [
+      "bootstrap",
+      "table",
+      "pricing-table",
+      "tablepricing"
+  ],
+  "license": "MIT",
+  "ignore": [
+      "**/.*",
+      "node_modules",
+      "bower_components"
+  ],
+  "moduleName": "tablePricing"
+}
