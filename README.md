@@ -1,6 +1,8 @@
 # tablepricing
 An extended AngularJS Directive pricing-table with form, pagination, and other added features. (supports twitter bootstrap v3).
 
+![tablepricing](https://github.com/tangfang/tablepricing/raw/master/examples/images/pricing-table.jpg)
+
 ## Install
 
 ```bash
